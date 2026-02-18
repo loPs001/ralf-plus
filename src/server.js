@@ -1,8 +1,8 @@
 
-import app from "./app.js";
+import app from "./app.js"
 
-const PORT = 3000;// Porta HTTP
+const PORT = 3000 // Porta HTTP
 //Conexão com o Server
 app.listen(PORT, () => {
-    console.log(`Servidor conectado com sucesso!\nAcesse: http://localhost:${PORT}/`);
+    console.log(`Servidor conectado com sucesso!\nAcesse: http://localhost:${PORT}/`)
 })

@@ -1,6 +1,5 @@
 import conexao from "../connection/connection-sql.js";
 
-
 class PagesController {
 
     static PaginaPrincipal (req, res) {
@@ -24,15 +23,11 @@ class PagesController {
             } else {
                 res.render("formulario", {produtos:retorno,  situacao: req.params.situacao})
             }
-        });
+        })
     }
 
-
-
      static AbaEdicao (req, res) {
-        
-        try {
-            const sql = `SELECT * FROM produtos WHERE codigo = ${req.params.codigo}`;
+        const sql = `SELECT * FROM produtos WHERE codigo = ${req.params.codigo}`;
         conexao.query(sql, (error, retorno) =>{
             if (error) {
                 throw error;
@@ -40,10 +35,6 @@ class PagesController {
                 res.render("formularioEditar", {produtos:retorno[0]});
             }
         });
-        } catch (error) {
-            return error;
-        }
-        
     }
 
 }

@@ -24,7 +24,7 @@ app.set('views', './views');
 app.use("/css", express.static("./public/css")); // Ativação do CSS
 app.use("/banco-imagens", express.static("./banco-imagens/"));//ref de pasta de arquivo, leitura.4c
 
-app.use(fileUpload()); // Habilitação para fazer UPLOAD de arquivos.
+app.use(fileUpload()) // Habilitação para fazer UPLOAD de arquivos.
 
 //Conectando ao banco de dados:
 conexao.connect((error) => {
@@ -37,7 +37,7 @@ conexao.connect((error) => {
 
 // Rotas:
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));/*Ele transforma dados do tipo texto em objeto. !IMPORTANTE PARA QUE O EXPRESS LEIA AS REQUISIÇÕES!*/
+app.use(express.urlencoded({extended: false}))/*Ele transforma dados do tipo texto em objeto. !IMPORTANTE PARA QUE O EXPRESS LEIA AS REQUISIÇÕES!*/
 
 
 router(app);

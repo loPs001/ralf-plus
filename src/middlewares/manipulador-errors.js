@@ -9,4 +9,4 @@ function manipuladorErrors (error, req, res, next) {
     return new ErrorBase().enviarResposta(res);
 }
 
-export default manipuladorErrors;
+export default manipuladorErrors
